@@ -1,0 +1,81 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: var(--text-main);
+}
+
+/* Change: Whitish background when scrolled or normally */
+.navbar.scrolled {
+  padding: 1rem 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #0F172A; /* Dark text for visibility */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar:not(.scrolled) {
+  /* User requested whitish navbar, let's make it whitish always for consistency */
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #0F172A;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-weight: 500;
+}
+
+.nav-links a {
+  transition: color 0.2s ease;
+  color: inherit;
+}
+
+.nav-links a:hover {
+  color: var(--accent-primary);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Specific button overrides for light navbar */
+.navbar .btn-outline {
+  border-color: #CBD5E1;
+  color: #0F172A;
+}
+
+.navbar .btn-outline:hover {
+  border-color: var(--accent-primary);
+  background: rgba(255, 215, 0, 0.1);
+  color: #0F172A;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
