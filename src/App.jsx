@@ -15,11 +15,9 @@ import OurClients from './components/OurClients';
 import Connect from './components/Connect';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import LoginModal from './components/LoginModal';
 import ApplicationModal from './components/ApplicationModal';
 
 function App() {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isApplyOpen, setIsApplyOpen] = useState(false);
 
   return (
@@ -30,7 +28,6 @@ function App() {
       transition={{ duration: 1.2, ease: "easeInOut" }}
     >
       <Navbar 
-        onLoginClick={() => setIsLoginOpen(true)} 
         onApplyClick={() => setIsApplyOpen(true)} 
       />
       <main>
@@ -50,7 +47,6 @@ function App() {
       </main>
       <Footer />
       
-      {isLoginOpen && <LoginModal onClose={() => setIsLoginOpen(false)} />}
       {isApplyOpen && <ApplicationModal onClose={() => setIsApplyOpen(false)} />}
     </motion.div>
   );

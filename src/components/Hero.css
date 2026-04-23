@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   /* Added AI background image with a dark gradient overlay */
-  background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.98)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1920&auto=format&fit=crop');
+  background-image: linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.95)), url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

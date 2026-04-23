@@ -37,7 +37,6 @@ const Navbar = ({ onLoginClick, onApplyClick }) => {
         </div>
 
         <div className="nav-actions">
-          <button className="btn btn-outline" onClick={onLoginClick}>Log In</button>
           <button className="btn btn-primary" onClick={onApplyClick}>
             Join Cohort
           </button>
