@@ -30,9 +30,9 @@ const Chatbot = () => {
             }}
           >
             {/* Header */}
-            <div style={{ 
-              backgroundColor: '#0A0F1C', 
-              padding: '1.5rem', 
+            <div style={{
+              backgroundColor: '#e3a811ff',
+              padding: '1.5rem',
               color: 'white',
               display: 'flex',
               justifyContent: 'space-between',
@@ -48,7 +48,7 @@ const Chatbot = () => {
             {/* Messages */}
             <div style={{ flexGrow: 1, padding: '1.5rem', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {messages.map((msg, i) => (
-                <div key={i} style={{ 
+                <div key={i} style={{
                   alignSelf: msg.sender === 'user' ? 'flex-end' : 'flex-start',
                   backgroundColor: msg.sender === 'user' ? '#2563eb' : '#f1f5f9',
                   color: msg.sender === 'user' ? 'white' : '#0f172a',
@@ -64,9 +64,9 @@ const Chatbot = () => {
 
             {/* Input */}
             <div style={{ padding: '1rem', borderTop: '1px solid #e2e8h0', display: 'flex', gap: '0.5rem' }}>
-              <input 
-                type="text" 
-                placeholder="Type a message..." 
+              <input
+                type="text"
+                placeholder="Type a message..."
                 style={{ flexGrow: 1, padding: '0.5rem 1rem', borderRadius: '10px', border: '1px solid #e2e8f0', outline: 'none' }}
                 onKeyPress={(e) => {
                   if (e.key === 'Enter' && e.target.value) {
@@ -94,7 +94,7 @@ const Chatbot = () => {
           width: '60px',
           height: '60px',
           borderRadius: '50%',
-          backgroundColor: '#0A0F1C',
+          backgroundColor: '#d3a63cff',
           color: 'white',
           border: 'none',
           boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
