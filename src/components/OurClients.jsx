@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 const OurClients = () => {
   const clients = [
-    { name: "Anantham", domain: "ananthamprojects.com", color: "#96bf48", logo: '/Anantham.png' },
-    { name: "McRay", domain: "mcraygor.com", color: "#635bff", logo: '/Mcraygor.png' },
-    { name: "Wishtune", domain: "wishtune.com", color: "#4a154b", logo: '/wishtune.png' },
-    { name: "Oxxy", domain: "oxxy.in", color: "#ff5a5f", logo: '/Oxxy.png' },
+    { name: "Anantham", domain: "ananthamprojects.com", color: "#96bf48", logo: '/ananthamL.png' },
+    { name: "McRaygor", domain: "mcraygor.com", color: "#635bff", logo: '/mcraygorL.png' },
+    { name: "Wishtune", domain: "wishtune.com", color: "#4a154b", logo: '/wishtuneL.png' },
+    { name: "Oxxy", domain: "oxxy.in", color: "#ff5a5f", logo: '/oxxyL.png' },
   ];
 
   return (

@@ -1,20 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Comparison = () => {
+  const [hovered, setHovered] = useState(null); // 'left' or 'right'
+
+  const leftBg = '#F8FAFC';
+  const rightBg = '#0A0F1C';
+  const leftText = '#0F172A';
+  const rightText = '#FFFFFF';
+
   return (
-    <section className="comparison-section" style={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
+    <motion.section 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="comparison-section" 
+      style={{ 
+        display: 'flex', 
+        flexWrap: 'wrap', 
+        width: '100%',
+        transition: 'background-color 0.5s ease'
+      }}
+    >
       {/* Left Side - The Old Way */}
-      <div style={{ 
-        flex: '1 1 50%', 
-        backgroundColor: '#F8FAFC', 
-        padding: '6rem 4rem',
-        color: '#0F172A',
-        minWidth: '300px'
-      }}>
+      <div 
+        onMouseEnter={() => setHovered('left')}
+        onMouseLeave={() => setHovered(null)}
+        style={{ 
+          flex: '1 1 50%', 
+          backgroundColor: hovered === 'left' ? rightBg : leftBg, 
+          padding: '6rem 4rem',
+          color: hovered === 'left' ? rightText : leftText,
+          minWidth: '300px',
+          transition: 'all 0.5s ease',
+          cursor: 'pointer'
+        }}
+      >
         <div style={{ maxWidth: '500px', marginLeft: 'auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-            <div style={{ height: '1px', width: '30px', backgroundColor: '#CBD5E1' }}></div>
-            <span style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '2px', color: '#64748B', textTransform: 'uppercase' }}>The Old Way</span>
+            <div style={{ height: '1px', width: '30px', backgroundColor: hovered === 'left' ? 'var(--accent-primary)' : '#CBD5E1' }}></div>
+            <span style={{ 
+              fontSize: '0.85rem', 
+              fontWeight: 700, 
+              letterSpacing: '2px', 
+              color: hovered === 'left' ? 'var(--accent-primary)' : '#64748B', 
+              textTransform: 'uppercase' 
+            }}>The Old Way</span>
           </div>
           
           <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, marginBottom: '3rem', letterSpacing: '-1px' }}>
@@ -28,8 +60,14 @@ const Comparison = () => {
               "No feedback, no progression",
               "Building standard, slow websites"
             ].map((item, idx) => (
-              <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#475569' }}>
-                <span style={{ color: '#CBD5E1' }}>—</span> {item}
+              <li key={idx} style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '1rem', 
+                fontSize: '1.1rem', 
+                color: hovered === 'left' ? '#E2E8F0' : '#475569' 
+              }}>
+                <span style={{ color: hovered === 'left' ? 'var(--accent-primary)' : '#CBD5E1' }}>—</span> {item}
               </li>
             ))}
           </ul>
@@ -37,14 +75,20 @@ const Comparison = () => {
       </div>
 
       {/* Right Side - The IconsBase System */}
-      <div style={{ 
-        flex: '1 1 50%', 
-        backgroundColor: '#0A0F1C', 
-        padding: '6rem 4rem',
-        color: '#FFFFFF',
-        minWidth: '300px',
-        position: 'relative'
-      }}>
+      <div 
+        onMouseEnter={() => setHovered('right')}
+        onMouseLeave={() => setHovered(null)}
+        style={{ 
+          flex: '1 1 50%', 
+          backgroundColor: hovered === 'left' ? leftBg : rightBg, 
+          padding: '6rem 4rem',
+          color: hovered === 'left' ? leftText : rightText,
+          minWidth: '300px',
+          position: 'relative',
+          transition: 'all 0.5s ease',
+          cursor: 'pointer'
+        }}
+      >
         {/* The center overlapping circle thing from the image */}
         <div className="comparison-circle" style={{
           position: 'absolute',
@@ -58,8 +102,9 @@ const Comparison = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#0A0F1C',
-          zIndex: 10
+          backgroundColor: hovered === 'left' ? rightBg : leftBg,
+          zIndex: 10,
+          transition: 'background-color 0.5s ease'
         }}>
           <div style={{ width: '8px', height: '8px', backgroundColor: 'var(--accent-primary)', borderRadius: '50%' }}></div>
         </div>
@@ -81,7 +126,13 @@ const Comparison = () => {
               "Mentor feedback every week",
               "Direct path to high-paying client work"
             ].map((item, idx) => (
-              <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#E2E8F0' }}>
+              <li key={idx} style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '1rem', 
+                fontSize: '1.1rem', 
+                color: hovered === 'left' ? '#475569' : '#E2E8F0' 
+              }}>
                 <span style={{ color: 'var(--accent-primary)' }}>—</span> {item}
               </li>
             ))}
@@ -98,7 +149,7 @@ const Comparison = () => {
           }
         }
       `}} />
-    </section>
+    </motion.section>
   );
 };
 

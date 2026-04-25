@@ -27,8 +27,22 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="section">
-      <div className="container">
+    <section id="features" className="section" style={{ position: 'relative' }}>
+      <div className="dots-bg">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="dot-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{ opacity: [0.1, 0.4, 0.1], scale: [0.8, 1.2, 0.8] }}
+            transition={{ duration: 4 + Math.random() * 4, repeat: Infinity, ease: "easeInOut" }}
+          />
+        ))}
+      </div>
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="section-header text-center">
           <h2 className="section-title">What You'll <span className="text-accent">Learn</span></h2>
           <p className="section-subtitle">We don't just teach code. We teach you how to leverage AI to build better, faster, and more beautifully.</p>
@@ -36,13 +50,13 @@ const Features = () => {
 
         <div className="grid-cards">
           {features.map((feature, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="card"
+              className="card hover-fill-white"
             >
               <div style={{ color: 'var(--accent-primary)', marginBottom: '1.5rem' }}>
                 {feature.icon}

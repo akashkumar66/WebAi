@@ -1,14 +1,22 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const PainPoint = () => {
   return (
-    <section className="section" style={{ 
-      padding: '6rem 0', 
-      backgroundColor: '#0A0E17',
-      boxShadow: '0 -15px 40px -5px rgba(255, 255, 255, 0.15)',
-      position: 'relative',
-      zIndex: 10
-    }}>
+    <motion.section 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="section" 
+      style={{ 
+        padding: '6rem 0', 
+        backgroundColor: '#0A0E17',
+        boxShadow: '0 -15px 40px -5px rgba(255, 255, 255, 0.15)',
+        position: 'relative',
+        zIndex: 10
+      }}
+    >
       <div className="container text-center">
         <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           <h2 style={{ 
@@ -45,7 +53,7 @@ const PainPoint = () => {
           </h3>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

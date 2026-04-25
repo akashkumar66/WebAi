@@ -11,16 +11,16 @@ const Portfolio = () => {
       link: "https://wishtune.com"
     },
     {
-      title: "McRaygor",
-      category: "Generated in 2 Hours",
-      image: "/Mcraygor.png",
-      link: "https://mcraygor.com"
-    },
-    {
       title: "Anantham",
       category: "Generated in 3 Hours",
       image: "/Anantham.png",
       link: "https://ananthamprojects.com"
+    },
+    {
+      title: "McRaygor",
+      category: "Generated in 2 Hours",
+      image: "/Mcraygor.png",
+      link: "https://mcraygor.com"
     }
   ];
 
@@ -44,7 +44,7 @@ const Portfolio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              whileHover={{ 
+              whileHover={{
                 borderColor: "rgba(255, 255, 255, 0.8)",
                 boxShadow: "0 10px 40px rgba(255, 255, 255, 0.15)",
                 y: -5

@@ -5,21 +5,21 @@ import { Star } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah J.",
-      role: "Freelance Designer",
-      text: "I used to hand off my Figma designs. Now, with Cursor and the prompting techniques I learned here, I build the full React site myself and charge triple.",
+      name: "Lokesh",
+      role: "Digital Marketing Executive",
+      text: "IconsBase helped me transform into a confident Digital Marketing Executive. The practical campaigns, real analytics, and step-by-step guidance made me industry-ready. I gained clarity, skills, and the confidence to handle real client projects from day one.",
       stars: 5
     },
     {
-      name: "David M.",
-      role: "Agency Owner",
-      text: "This cohort completely transformed our agency's workflow. We are outputting higher quality websites in a fraction of the time. The ROI is insane.",
+      name: "Lalit",
+      role: "Video Editor",
+      text: "IconsBase elevated my editing skills from basic cuts to professional storytelling. The hands-on projects built a strong portfolio for me, and the guidance I received shaped my creative vision. It was the boost my video editing career truly needed.",
       stars: 5
     },
     {
-      name: "Elena R.",
-      role: "Frontend Developer",
-      text: "I thought I knew how to use Copilot, but this course showed me I was barely scratching the surface. The advanced interaction module is worth the price alone.",
+      name: "Hardik",
+      role: "Web Developer",
+      text: "IconsBase completely changed my career. In just 14 weeks, I went from retail to becoming a confident web developer. The practical training and constant support made all the difference.",
       stars: 5
     }
   ];
@@ -33,13 +33,13 @@ const Testimonials = () => {
 
         <div className="grid-cards">
           {testimonials.map((test, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="card"
+              className="card hover-fill-blue"
               style={{ display: 'flex', flexDirection: 'column' }}
             >
               <div style={{ display: 'flex', gap: '0.25rem', color: 'var(--accent-primary)', marginBottom: '1rem' }}>

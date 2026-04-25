@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle2 } from 'lucide-react';
 
@@ -6,10 +6,19 @@ const Connect = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  useEffect(() => {
+    if (isSubmitted) {
+      const timer = setTimeout(() => {
+        setIsSubmitted(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isSubmitted]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-    // In a real app, this is where you'd send the data to your backend
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (

@@ -36,7 +36,7 @@ const TargetUsers = () => {
                 boxShadow: '0 15px 30px rgba(0, 0, 0, 0.1)',
                 borderColor: 'rgba(0, 0, 0, 0.2)'
               }}
-              className="card"
+              className="card hover-circle-fill"
               style={{
                 display: 'flex',
                 flexDirection: 'column',

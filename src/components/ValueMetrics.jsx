@@ -15,7 +15,7 @@ const ValueMetrics = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card"
+            className="card hover-fill-blue"
             style={{ padding: '3rem 2rem' }}
           >
             <h2 style={{ fontSize: '3.5rem', color: 'var(--accent-primary)', marginBottom: '0.5rem' }}>10x</h2>
@@ -28,7 +28,7 @@ const ValueMetrics = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="card"
+            className="card hover-fill-blue"
             style={{ padding: '3rem 2rem' }}
           >
             <h2 style={{ fontSize: '3.5rem', color: 'var(--accent-primary)', marginBottom: '0.5rem' }}>Zero</h2>
@@ -41,7 +41,7 @@ const ValueMetrics = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="card"
+            className="card hover-fill-blue"
             style={{ padding: '3rem 2rem' }}
           >
             <h2 style={{ fontSize: '3.5rem', color: 'var(--accent-primary)', marginBottom: '0.5rem' }}>High</h2>
