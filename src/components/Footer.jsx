@@ -45,8 +45,81 @@ const Footer = () => {
           </div>
         </div>
         
-        <div style={{ textAlign: 'center', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.05)', color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
-          &copy; {new Date().getFullYear()} IconsBase AI Cohort. All rights reserved.
+        <div style={{ 
+          textAlign: 'center', 
+          paddingTop: '2rem', 
+          borderTop: '1px solid rgba(255,255,255,0.05)', 
+          color: 'var(--text-secondary)', 
+          fontSize: '0.875rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '1.5rem'
+        }}>
+          <div>&copy; {new Date().getFullYear()} IconsBase AI Cohort. All rights reserved.</div>
+          
+          {/* Credit Section */}
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.375rem',
+            borderRadius: '0.375rem',
+            padding: '0.25rem 0.5rem',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            backgroundColor: 'rgba(0, 0, 0, 0.05)',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+            transition: 'all 0.3s ease'
+          }}>
+            <a
+              href="https://fabulousmedia.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                borderRadius: '0.25rem',
+                padding: '0.125rem',
+                opacity: 0.9,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'scale(1.1)'; }}
+              onMouseOut={(e) => { e.currentTarget.style.opacity = '0.9'; e.currentTarget.style.transform = 'scale(1)'; }}
+              aria-label="FabulousMedia"
+            >
+              <img
+                src="https://play.fabulousmedia.in/sitecredit/images/fabulousmedia.svg"
+                alt="FabulousMedia"
+                style={{ height: '0.75rem', width: 'auto', filter: 'invert(1)' }}
+                loading="lazy"
+              />
+            </a>
+            <div style={{ height: '0.75rem', width: '1px', backgroundColor: 'rgba(0,0,0,0.1)' }}></div>
+            <a
+              href="https://gocommercially.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                borderRadius: '0.25rem',
+                padding: '0.125rem',
+                opacity: 0.9,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseOver={(e) => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'scale(1.1)'; }}
+              onMouseOut={(e) => { e.currentTarget.style.opacity = '0.9'; e.currentTarget.style.transform = 'scale(1)'; }}
+              aria-label="GoCommercially"
+            >
+              <img
+                src="https://play.fabulousmedia.in/sitecredit/images/gocommercially.svg"
+                alt="GoCommercially"
+                style={{ height: '0.75rem', width: 'auto', filter: 'invert(1)' }}
+                loading="lazy"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

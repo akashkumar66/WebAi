@@ -103,3 +103,18 @@
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .main-nav {
+    padding: 0.5rem 0;
+  }
+  
+  .logo img {
+    height: 45px !important;
+  }
+  
+  .demo-btn {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+}
